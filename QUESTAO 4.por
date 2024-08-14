@@ -1,44 +1,50 @@
 programa {
   funcao inicio() {
     //Declara�ao de variaveis.
-    real quantidade_maca, quantidade_morango, desconto_maca, desconto_morango, valor_pagar, valor_pagar2, valor_pagar_maca, valor_pagar_morango
-  
+    real kg_morango, kg_maca, pagamento_total_abaixo, pagamento_total_acima
+    real valor_morango5, valor_maca5, valor_morango_acima, valor_maca_acima
+    real pagamento_morango_abaixo, pagamento_maca_abaixo, pagamento_morango_acima, pagamento_maca_acima
+    real kg_total, valor_total_desconto, valor_pagar_desconto, desconto_final_abaixo, desconto_final_acima
     //solicitando dados.
     escreva("Quantidade de morangos em Kg : ")
-    leia(quantidade_morango)
+    leia(kg_morango)
 
     escreva("Quantidade de maçã em Kg: ")
-    leia(quantidade_maca)
+    leia(kg_maca)
     
     //Calculando.
-    desconto_maca = (quantidade_maca * 10 / 100)
-    desconto_morango = (quantidade_morango * 10 / 100)
+    valor_morango5 = 2.50
+    valor_maca5 = 1.80
+    valor_morango_acima = 2.20
+    valor_maca_acima = 1.50
 
-    valor_pagar = (quantidade_maca * 1.80)
-    valor_pagar2 = (quantidade_morango * 2.50)
+    pagamento_morango_abaixo = valor_morango5 * kg_morango
+    pagamento_maca_abaixo = valor_maca5 * kg_maca
+    pagamento_morango_acima = valor_morango_acima * kg_morango
+    pagamento_maca_acima = valor_maca_acima * kg_maca
 
-    valor_pagar_morango = valor_pagar2 - desconto_morango
-    valor_pagar_maca = valor_pagar - desconto_maca
-
-    se (quantidade_maca <= 5 e quantidade_morango <= 5){
-    	escreva("\nvalor a ser pago pelo morango = R$" + valor_pagar2)
-     escreva("\nvalor a ser pago pela maçã = R$" + valor_pagar)
-    }senao{
-    escreva("\nvalor a ser pago pelo morango = R$" + valor_pagar_morango)
-    escreva("\nvalor a ser pago pela maçã = R$" + valor_pagar_maca)
+    pagamento_total_abaixo = pagamento_morango_abaixo + pagamento_maca_abaixo
+    pagamento_total_acima = pagamento_morango_acima + pagamento_maca_acima
+    
+    kg_total = kg_morango + kg_maca
+    valor_total_desconto = pagamento_total_acima * 0.10
+    desconto_final_abaixo = pagamento_total_abaixo - valor_total_desconto
+    desconto_final_acima = pagamento_total_acima - valor_total_desconto
+    //condicao
+    se (kg_morango e kg_maca <= 5){
+    escreva("\nValor a pagar do morango R$" + pagamento_morango_abaixo)
+    escreva("\nValor a pagar da maçã R$" + pagamento_maca_abaixo)
+    escreva("\nValor total a pagarR$" + pagamento_total_abaixo)
+    }se(kg_morango e kg_maca > 5){
+    escreva("\nValor a pagar do morango R$" + pagamento_morango_acima)
+    escreva("\nValor a pagar da maçã R$" + pagamento_maca_acima)
+    escreva("\nValor total a pagarR$" + pagamento_total_acima)
+    }se (kg_total > 8 ) {
+    escreva("\nValor a pagar com desconto R$" + desconto_final_abaixo)
     }
+  
     //Exibindo resultados.
    
   }
 }
-/* $$$ Portugol Studio $$$ 
- * 
- * Esta seção do arquivo guarda informações do Portugol Studio.
- * Você pode apagá-la se estiver utilizando outro editor.
- * 
- * @POSICAO-CURSOR = 1056; 
- * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = ;
- * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
- * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
