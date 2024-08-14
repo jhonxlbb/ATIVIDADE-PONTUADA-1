@@ -16,7 +16,7 @@ programa
 	//calculando
 	soma = valor1 + valor2
 	se (soma > valor3){
-	escreva("A soma do primeiro e sefundo valor é menor que o terceiro valor.")}			
+	escreva("A soma do primeiro e segundo valor é menor que o terceiro valor.")}			
 	senao{ escreva("A soma do primeiro e segundo valor é maior que o terceiro valor.")}
 	
 	
