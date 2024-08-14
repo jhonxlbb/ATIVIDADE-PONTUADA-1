@@ -3,13 +3,16 @@ programa {
     //declarando variaveis
     real renda, emprestimo, emprestimo_maximo, prestacao_maxima
     inteiro prestacao 
-    //coletando informaçoes
+    //coletando informaÃ§oes
     escreva("Digite sua renda mensal : R$ ")
     leia(renda)
+    limpa()
     escreva("Digite o valor total do emprestimo : R$ ")
     leia(emprestimo)
-    escreva("Digite o valor das prestações que deseja pagar: ")
+    limpa()
+    escreva("Digite o valor das prestaÃ§Ãµes que deseja pagar: ")
     leia(prestacao)
+    limpa()
     //calculando
     emprestimo_maximo = renda * 10
     prestacao_maxima = renda * 0.3
@@ -17,7 +20,7 @@ programa {
     se (emprestimo <= emprestimo_maximo e prestacao <= prestacao_maxima ){
      escreva("O emprestimo solicitado pode ser concedido!")    
     } senao{
-      escreva("O emprestimo solicitado NÃO pode ser concedido!")
+      escreva("O emprestimo solicitado NÃƒO pode ser concedido!")
     }
      
     
